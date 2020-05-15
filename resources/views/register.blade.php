@@ -1,5 +1,5 @@
 @extends("layout")
-@section("register")
+@section("Content")
     <div class="col-xs-6">
         <h1 class="text-center">Register</h1>
         <form action="?route=post_register" method="post">

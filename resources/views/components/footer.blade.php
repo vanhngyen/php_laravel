@@ -1,4 +1,1 @@
-@extends("layout")
-@section("footer")
-    <h1>Day la footer</h1>
-@endsection
+<footer>Đây là footer</footer>
