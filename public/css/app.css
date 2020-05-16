@@ -1,0 +1,29 @@
+body{
+    background-image: url("../img/nen2.jpg");
+}
+ .container {
+     margin-top: 5px;
+     margin-bottom: 5px;
+     padding-top: 20px;
+     padding-bottom: 60px;
+     width: 30%;
+ }
+ h1{
+     color: crimson;
+     font-size: 100px;
+ }
+ .navbar-nav{
+     margin-top: 20px;
+     display: inline;
+     list-style: none;
+     text-align: center;
+ }
+ .nav-link{
+    color: crimson;
+ }
+
+ .footer{
+     color: crimson;
+     text-align: center;
+     font-size: 10px;
+ }

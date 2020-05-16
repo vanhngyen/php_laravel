@@ -11,7 +11,7 @@
        @yield("Content")
     </div>
     <x-footer/>
-{{--        @include("components.footer")--}}
+{{--        @include("components.footer") kiểu cũ--}}
 </body>
 </html>
 

@@ -17,8 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/demo-routing', 'webController@demoRouting');
-
-Route::get('/login-routing','LoginController@loginRouting');
-
-Route::get('/register-routing','RegisterController@registerRouting');
+Route::get('/demo', 'webController@demoRouting');
+Route::get('/login','LoginController@loginRouting');
+Route::get('/register','RegisterController@registerRouting');
+Route::get('/forgotPwd', 'ForgotPwdController@ForgotPwd');
