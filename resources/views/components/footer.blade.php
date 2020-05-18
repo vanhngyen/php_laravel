@@ -1,7 +1,7 @@
-<footer>
-    <div class="row ">
-        <nav class="footer col-md-12">
-            <ul>@2020 vanhvanh512@gmail.com | Staying at home is also fun</ul>
-        </nav>
+<footer class="main-footer">
+    <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+        <b>Version</b> 3.0.4
     </div>
 </footer>

@@ -13,11 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/demo', 'webController@demoRouting');
+
+Route::get('/', 'AbcController@index');
 Route::get('/login','LoginController@loginRouting');
 Route::get('/register','RegisterController@registerRouting');
 Route::get('/forgotPwd', 'ForgotPwdController@ForgotPwd');
