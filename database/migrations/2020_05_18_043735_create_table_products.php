@@ -20,8 +20,10 @@ class CreateTableProducts extends Migration
             $table->decimal("price",12,4);//thêm table
             $table->unsignedBigInteger("qty")->default(1);//thêm table
             $table->unsignedBigInteger("category_id");//thêm table
+            $table->unsignedBigInteger("brand_id");//thêm table
             $table->timestamps();
             $table->foreign("category_id")->references("id")->on("categories");//thêm table
+            $table->foreign("brand_id")->references("id")->on("brands");//thêm table
         });
     }
 

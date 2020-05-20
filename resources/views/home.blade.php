@@ -1,4 +1,4 @@
 @extends("layout")
-@section("content")
+@section("Content")
     day la noi dung trang chu
 @endsection
