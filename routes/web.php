@@ -19,6 +19,11 @@ Route::get('/', 'AbcController@index');
 Route::get('/login','LoginController@loginRouting');
 Route::get('/register','RegisterController@registerRouting');
 Route::get('/forgotPwd', 'ForgotPwdController@ForgotPwd');
+
 Route::get('/list-category', 'AbcController@listcategory');
 Route::get('/new-category', 'AbcController@newcategory');
 Route::post('/save-category','AbcController@savecategory');
+
+Route::get('/brand-list','AbcController@brandlist');
+Route::get('/new-brand', 'AbcController@newbrand');
+Route::post('/save-brand','AbcController@savebrand');

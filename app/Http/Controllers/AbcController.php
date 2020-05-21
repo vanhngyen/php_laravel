@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Brand;
 use App\Category;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -50,5 +51,33 @@ class AbcController extends Controller
             return redirect()->back();
         }
         return redirect()->to("/list-category");
+    }
+
+    public function brandlist(){
+        //$brands = DB::table("brands")->get();
+
+        $brands = Brand::all();
+        return view("brand.list",[
+            "brands"=>$brands
+        ]);
+    }
+
+    public function newbrand(){
+        return view("brand.new");
+    }
+
+    public function savebrand(Request $request){
+        $request->validate([
+            "brands_name"=>"required|string|min:6|unique:brands"
+        ]);
+
+        try {
+            Brand::create([
+                "brands_name"=>$request->get("brands_name"),
+            ]);
+        }catch (\Exception $exception){
+            return redirect()->back();
+        }
+        return redirect()->to("/brand-list");
     }
 }

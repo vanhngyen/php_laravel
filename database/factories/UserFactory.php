@@ -27,8 +27,14 @@ $factory->define(User::class, function (Faker $faker) {
     ];
 });
 
-$factory->define(\App\Category::class,function(Faker $faker){
+//$factory->define(\App\Category::class,function(Faker $faker){
+//    return [
+//        "category_name"=>$faker->unique()->company
+//    ];
+//});
+
+$factory->define(\App\Brand::class,function (Faker $faker){
     return [
-        "category_name"=>$faker->unique()->company
+        "brands_name"=>$faker->unique()->name
     ];
 });

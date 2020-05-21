@@ -11,7 +11,6 @@ class Category extends Model
 
     public $fillable = [
         "category_name"
-
     ];
     //hàm ví dụ
 //    public function get($key){
