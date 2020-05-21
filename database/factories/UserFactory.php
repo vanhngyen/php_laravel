@@ -35,6 +35,6 @@ $factory->define(User::class, function (Faker $faker) {
 
 $factory->define(\App\Brand::class,function (Faker $faker){
     return [
-        "brands_name"=>$faker->unique()->name
+        "brands_name"=>$faker->unique()->email
     ];
 });
