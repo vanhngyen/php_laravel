@@ -1,10 +1,11 @@
 @extends("layout")
 @section("contentHeader","Brand")
-@section("title","Brand List")
+@section("title","Brand Listing")
 @section("Content")
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">Brand Listing</h3>
+
             <div class="card-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">
                     <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
@@ -16,7 +17,7 @@
             </div>
         </div>
         <div class="card-header">
-            <a href="{{"new-brand"}}" class="float-right btn btn-outline-primary">+</a>
+            <a href="{{url("/new-brand")}}" class="float-right btn btn-outline-primary">+</a>
         </div>
         <!-- /.card-header -->
 
@@ -37,6 +38,15 @@
                         <td>{{$brand->__get("brands_name")}}</td>
                         <td>{{$brand->__get("created_at")}}</td>
                         <td>{{$brand->__get("updated_at")}}</td>
+{{--                        <td>--}}
+{{--                            <a href="{{url("/edit-category/{$category->__get("id")}")}}" class="btn btn-outline-warning">Edit</a>--}}
+{{--                            <form action="{{url("/delete-category/{$category->__get("id")}")}}" method="post">--}}
+{{--                                @method("DELETE")--}}
+{{--                                @csrf--}}
+{{--                                <button type="submit" onclick="return confirm('Are you sure')" class="btn btn-outline-primary">DELETE</button>--}}
+{{--                            </form>--}}
+{{--                        </td>--}}
+
                         @endforeach
                     </tr>
                 </tbody>
