@@ -57,6 +57,32 @@
                             </a>
                         </li>
                     </ul>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{url("/list-product")}}" class="nav-link active">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>List Product</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{url("/new-product")}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>New Product</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{url("/new-brand")}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>New Brand</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{url("/list-brand")}}" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>List Brand</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="nav-item">
                     <a href="#" class="nav-link">

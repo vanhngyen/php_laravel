@@ -38,19 +38,20 @@
                         <td>{{$brand->__get("brands_name")}}</td>
                         <td>{{$brand->__get("created_at")}}</td>
                         <td>{{$brand->__get("updated_at")}}</td>
-{{--                        <td>--}}
-{{--                            <a href="{{url("/edit-category/{$category->__get("id")}")}}" class="btn btn-outline-warning">Edit</a>--}}
-{{--                            <form action="{{url("/delete-category/{$category->__get("id")}")}}" method="post">--}}
-{{--                                @method("DELETE")--}}
-{{--                                @csrf--}}
-{{--                                <button type="submit" onclick="return confirm('Are you sure')" class="btn btn-outline-primary">DELETE</button>--}}
-{{--                            </form>--}}
-{{--                        </td>--}}
+                        <td>
+                            <a href="{{url("/edit-brand/{$brand->__get("id")}")}}" class="btn btn-outline-warning">Edit</a>
+                            <form action="{{url("/delete-brand/{$brand->__get("id")}")}}" method="post">
+                                @method("DELETE")
+                                @csrf
+                                <button type="submit" onclick="return confirm('Are you sure')" class="btn btn-outline-primary">DELETE</button>
+                            </form>
+                        </td>
 
                         @endforeach
                     </tr>
                 </tbody>
             </table>
+{{--           {!! $brands->links() !!}--}}
         </div>
         <!-- /.card-body -->
     </div>

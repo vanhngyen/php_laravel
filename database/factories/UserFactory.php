@@ -38,3 +38,16 @@ $factory->define(\App\Brand::class,function (Faker $faker){
         "brands_name"=>$faker->unique()->email
     ];
 });
+
+$factory->define(\App\Product::class,function (Faker $faker){
+    return[
+      "product_name"=>$faker->jobTitle,
+      "product_desc"=>$faker->text,
+      "price"=>$faker->numberBetween(0,5000),
+      "qty"=>$faker->numberBetween(1,200),
+      "category_id"=>$faker->numberBetween(10,1012),
+      "brand_id"=>$faker->numberBetween(4,5176),
+
+    ];
+
+});
