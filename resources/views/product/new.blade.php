@@ -62,7 +62,6 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </form>
-    </div>
     <!-- /.card -->
 
     <!-- Form Element sizes -->

@@ -148,13 +148,13 @@ class AbcController extends Controller
     }
 
     public function deleteBrand($id){
-        $brand = Brand::findOrFail($id);
-        try {
-            $brand->delete();
-        }catch (\Exception $exception){
+            $brand = Brand::findOrFail($id);
+            try {
+                $brand->delete();
+            }catch (\Exception $exception){
 
-        }
-        return redirect()->to("/list-brand");
+            }
+            return redirect()->to("/list-brand");
     }
 
 
@@ -190,7 +190,7 @@ class AbcController extends Controller
             //xử lí để đưa ảnh nên media trong public sau đó đưa nguồn file cho vào biến
             if($request->hasFile("product_image")){
                 $file = $request->file("product_image");
-                $allow = ["png","ipg","ipeg","gif"];
+                $allow = ["png","jpg","jpeg","gif"];
                 $extName = $file->getClientOriginalExtension();//lay dưới
                 if(in_array($extName,$allow)){
                     $fileName = time().$file->getClientOriginalName();//get fileName

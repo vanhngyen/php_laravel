@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Auth::routes();
 Route::get('/', 'AbcController@index');
 Route::get('/login','LoginController@loginRouting');
 Route::get('/register','RegisterController@registerRouting');
@@ -37,3 +37,11 @@ Route::delete("/delete-brand/{id}",'AbcController@deleteBrand');
 Route::get("/list-product","AbcController@listProduct");
 Route::get("/new-product","AbcController@newProduct");
 Route::post("/save-product","AbcController@saveProduct");
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
