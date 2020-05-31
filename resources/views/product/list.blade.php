@@ -17,7 +17,7 @@
             </div>
         </div>
         <div class="card-header">
-            <a href="{{url("new-product")}}" class="float-right btn btn-outline-primary">+</a>
+            <a href="{{url("admin/new-product")}}" class="float-right btn btn-outline-primary">+</a>
         </div>
         <!-- /.card-header -->
 
@@ -35,6 +35,8 @@
                     <th>Brand</th>
                     <th>Created At</th>
                     <th>Updated At</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -45,12 +47,22 @@
                         <td>{{$product->__get("product_name")}}</td>
                         <td><img src="{{$product->getImage()}}" width="50" height="50"/></td>
                         <td>{{$product->__get("product_desc")}}</td>
-                        <td>{{number_format($product->__get("price"))}}</td>
+                        <td>{{number_format($product->__get("price"))}}$</td>
                         <td>{{$product->__get("qty")}}</td>
                         <td>{{$product->Category->__get("category_name")}}</td>
                         <td>{{$product->Brand->__get("brands_name")}}</td>
                         <td>{{$product->__get("created_at")}}</td>
                         <td>{{$product->__get("updated_at")}}</td>
+                        <td>
+                            <a href="{{url("admin/edit-product/{$product->__get("id")}")}}" class="btn btn-warning waves-effect">Edit</a>
+                        </td>
+                        <td>
+                            <form action="{{url("admin/delete-product/{$product->__get("id")}")}}" method="post">
+                                @method("DELETE")
+                                @csrf
+                                <button type="submit" onclick="return confirm('are you sure?');" class="btn btn-danger waves-effect">delete</button>
+                            </form>
+                        </td>
                         @endforeach
                     </tr>
                 </tbody>

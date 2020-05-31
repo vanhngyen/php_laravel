@@ -3,7 +3,7 @@
 @section("title","Create a new category")
 @section("Content")
     <!-- form start -->
-    <form role="form" action="{{url("save-category")}}" method="post">
+    <form role="form" action="{{url("admin/save-category")}}" method="post">
         @method("POST")
         @csrf
         <div class="card-body">
@@ -11,7 +11,7 @@
                 <label for="exampleInputEmail1">Category Name</label>
                 <input class="form-control @error("category_name") is-invalid @enderror" name="category_name" type="text" id="exampleInputEmail1" placeholder="Category name">
             </div>
-            @error("categori_name")
+            @error("categories_name")
                 <span class="error invalid-feedback">{{$message}}</span>
             @enderror
         </div>

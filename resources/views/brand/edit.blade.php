@@ -3,7 +3,7 @@
 @section("title","Create a new brand")
 @section("Content")
     <!-- form start -->
-    <form role="form" action="{{url("/update-brand/{$brand->__get("id")}")}}" method="post">
+    <form role="form" action="{{url("admin/update-brand/{$brand->__get("id")}")}}" method="post">
         @method("PUT")
         @csrf
         <div class="card-body">

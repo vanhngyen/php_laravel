@@ -1,9 +1,9 @@
 @extends("layout")
-@section("contentHeader","Category")
-@section("title","Create a new category")
+@section("contentHeader","Product")
+@section("title","Create a new product")
 @section("Content")
     <!-- form start -->
-    <form role="form" action="{{url("save-product")}}" method="post" enctype="multipart/form-data">
+    <form role="form" action="{{url("admin/save-product")}}" method="post" enctype="multipart/form-data">
         @method("POST")
         @csrf
         <div class="card-body">

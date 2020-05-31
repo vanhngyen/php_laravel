@@ -17,7 +17,7 @@
             </div>
         </div>
         <div class="card-header">
-            <a href="{{url("/new-brand")}}" class="float-right btn btn-outline-primary">+</a>
+            <a href="{{url("admin/new-brand")}}" class="float-right btn btn-outline-primary">+</a>
         </div>
         <!-- /.card-header -->
 
@@ -39,8 +39,8 @@
                         <td>{{$brand->__get("created_at")}}</td>
                         <td>{{$brand->__get("updated_at")}}</td>
                         <td>
-                            <a href="{{url("/edit-brand/{$brand->__get("id")}")}}" class="btn btn-outline-warning">Edit</a>
-                            <form action="{{url("/delete-brand/{$brand->__get("id")}")}}" method="post">
+                            <a href="{{url("admin/edit-brand/{$brand->__get("id")}")}}" class="btn btn-outline-warning">Edit</a>
+                            <form action="{{url("admin/delete-brand/{$brand->__get("id")}")}}" method="post">
                                 @method("DELETE")
                                 @csrf
                                 <button type="submit" onclick="return confirm('Are you sure')" class="btn btn-outline-primary">DELETE</button>

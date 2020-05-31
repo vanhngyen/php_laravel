@@ -3,7 +3,7 @@
 @section("title","Create a new category")
 @section("Content")
     <!-- form start -->
-    <form role="form" action="{{url("/update-category/{$category->__get("id")}")}}" method="post">
+    <form role="form" action="{{url("admin/update-category/{$category->__get("id")}")}}" method="post">
         @method("PUT")
         @csrf
         <div class="card-body">
