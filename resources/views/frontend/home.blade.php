@@ -10,11 +10,12 @@
                             <i class="fa fa-bars"></i>
                             <span>All departments</span>
                         </div>
-                        <ul>
-                            @foreach($errors as $category)
-                                <li><a href="#">{{$category->__get("category_name")}}</a></li>
-                            @endforeach
-                        </ul>
+                        <x-frontend.sidebar/>
+{{--                        <ul>--}}
+{{--                            @foreach($errors as $category)--}}
+{{--                                <li><a href="#">{{$category->__get("category_name")}}</a></li>--}}
+{{--                            @endforeach--}}
+{{--                        </ul>--}}
                     </div>
                 </div>
                 <div class="col-lg-9">

@@ -12,9 +12,13 @@ use Illuminate\Support\Facades\DB;
 class AbcController extends Controller
 {
     //
-    public function login(){
+    public function index(){
         return view("home");
     }
+
+//    public function login(){
+//        return view("home");
+//    }
 
     public function listcategory(){
        //query builder
@@ -100,7 +104,7 @@ class AbcController extends Controller
     }
 
     public function newbrand(){
-        return view("admin/brand.new");
+        return view("brand.new");
     }
 
     public function savebrand(Request $request){
@@ -190,7 +194,7 @@ class AbcController extends Controller
             //xử lí để đưa ảnh nên media trong public sau đó đưa nguồn file cho vào biến
             if($request->hasFile("product_image")){
                 $file = $request->file("product_image");
-                $allow = ["png","jpg","jpeg","gif"];
+                $allow = ["png","jpg","jpeg","gif","jfif"];
                 $extName = $file->getClientOriginalExtension();//lay dưới
                 if(in_array($extName,$allow)){
                     $fileName = time().$file->getClientOriginalName();//get fileName
@@ -237,7 +241,7 @@ class AbcController extends Controller
             $product_image = $product->get("product_image");
             if($request->hasFile("product_image")){
                 $file = $request->file("product_image");
-                $allow = ["png","jpg","jpeg","gif"];
+                $allow = ["png","jpg","jpeg","gif","jfif"];
                 $extName = $file->getClientOriginalExtension();
                 if(in_array($extName,$allow)){
                     $fileName = time().$file->getClientOriginalName(); //  lấy tên gốc original của file gửi lên từ client

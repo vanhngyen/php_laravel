@@ -20,7 +20,7 @@ class Product extends Model
 
     public function getImage(){
         if(is_null($this->__get("product_image"))){
-            return asset("media/product.jpeg");
+            return asset("media/image_defauld.png");
         }
         return asset($this->__get("product_image"));
     }
