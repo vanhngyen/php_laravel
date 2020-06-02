@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\DB;
 class AbcController extends Controller
 {
     //
-    public function index(){
+    public function login(){
         return view("home");
     }
 
