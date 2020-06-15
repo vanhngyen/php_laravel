@@ -109,7 +109,7 @@
                             <i class="fa fa-star-half-o"></i>
                             <span>(18 reviews)</span>
                         </div>
-                        <div class="product__details__price">{{$product->__get("product_price")}}</div>
+                        <div class="product__details__price">{{$product->getPrice()}}</div>
                         <p>{{$product->__get("product_desc")}}</p>
                         <form method="POST" action="{{url("/cart/add/{$product->__get("id")}")}}">
                             @method("POST")

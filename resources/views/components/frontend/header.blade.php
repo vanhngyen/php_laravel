@@ -28,7 +28,20 @@
                             </ul>
                         </div>
                         <div class="header__top__right__auth">
-                            <a href="#"><i class="fa fa-user"></i> Login</a>
+                            @guest
+                                <a href="{{url("/login")}}"><i class="fa fa-user"></i> Login</a>
+                            @else
+
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            @endguest
                         </div>
                     </div>
                 </div>
@@ -80,7 +93,7 @@
                     @endphp
                     <ul>
                         <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li>
-                        <li><a href="{{asset("/")}}"><i class="fa fa-shopping-bag"></i> <span>{{$count_item}}</span></a></li>
+                        <li><a href="{{asset("/shopping-cart")}}"><i class="fa fa-shopping-bag"></i> <span>{{$count_item}}</span></a></li>
                     </ul>
                     <div class="header__cart__price">item: <span>{{$grandTotal}}</span></div>
                 </div>
