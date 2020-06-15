@@ -7,12 +7,13 @@ use App\Category;
 use App\Events\OrderCreated;
 use App\Order;
 use App\Product;
+use App\User;
 use Carbon\Carbon;
-use Illuminate\Filesystem\Cache;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\DB;
+use Psy\Util\Str;
 
 class HomeController extends Controller
 {
