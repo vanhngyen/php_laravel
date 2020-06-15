@@ -15,7 +15,7 @@ class UpdateTableUsersAddRole extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             //
-            $table->unsignedInteger("role")->after("password")->default(0);
+            $table->unsignedInteger("role")->after("password")->default(1);
         });
     }
 
