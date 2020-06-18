@@ -40,4 +40,14 @@ class Product extends Model
     public function getProductUrl(){
         return url("/product/{$this->__get("slug")}");
     }
+
+    public function toArray()
+    {
+        return [
+          "id"=>$this->__get("id"),
+            "name"=>$this->__get("product_name"),
+            "image"=>$this->getImage()
+
+        ];
+    }
 }
