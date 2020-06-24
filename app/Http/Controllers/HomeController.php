@@ -30,36 +30,33 @@ class HomeController extends Controller
             $featured = Product::orderBy("updated_at", "DESC")->limit(8)->get();
             $latest_1 = Product::orderBy("updated_at", "DESC")->limit(3)->get();
             $latest_2 = Product::orderBy("updated_at", "DESC")->offset(3)->limit(3)->get();
-
+            $categories = Category::all();
+            foreach ($categories as $p){
+                $slug = \Illuminate\Support\Str::slug($p->__get("category_name"));
+                $p->slug =$slug.$p->__get("id");
+                $p->save();
+            }
+//        die("done");
+            $products=Product::all();
+            foreach ($products as $p) {
+                $slug = \Illuminate\Support\Str::slug($p->__get("product_name"));
+                $p->slug = $slug = $slug . $p->__get("id");
+                $p->save();
+                //$p->update(["slug" => $slug . $p->__get("id");
+            }
             return view("frontend.home", [
                 "most_views" => $most_views,
                 "featured" => $featured,
                 "latest_1" => $latest_1,
                 "latest_2" => $latest_2
-            ])->render();
-            $now = Carbon::now();
-            Cache::put("home_page",$view,$now->addMinutes(20));
+            ]);
+//            $now = Carbon::now();
+//            Cache::put("home_page",$view,$now->addMinutes(20));
         }
-        return Cache::get("home_page");
-//        $categories = Category::all();
-//        foreach ($categories as $p){
-//            $slug = \Illuminate\Support\Str::slug($p->__get("category_name"));
-//            $p->slug =$slug.$p->__get("id");
-//            $p->save();
-//        }
-//        die("done");
-//        $products=Product::all();
-//        foreach ($products as $p) {
-//            $slug = \Illuminate\Support\Str::slug($p->__get("product_name"));
-//            $p->slug = $slug = $slug . $p->__get("id");
-//            $p->save();
-//            //$p->update(["slug" => $slug . $p->__get("id");
-//        }
-//
+//        return Cache::get("home_page");
         //limit :laays 3 thang
         //offset : bo di 3 thang dau tien
         //offset = (page-1)*limit
-
     }
 
     public function category(Category $category)
